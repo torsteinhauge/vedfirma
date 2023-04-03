@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Vedfirma</title>
+    <style>
+        body {
+            background-image: url('../media/ved.PNG');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        nav {
+            background-color: #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            display: inline-block;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px;
+        }
+        main {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            text-align: justify;
+        }
+        h2 {
+            font-size: 2em;
+            margin: 0 0 10px 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vedfirma</h1>
+        <p>Din pålitelige kilde for kvalitetsved</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Hjem</a></li>
+            <li><a href="omoss.html">Om oss</a></li>
+            <li><a href="produkt.html">Produkter</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="../svelte/vedkalkulator.svelte">Vedkalkulator</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Kontakt oss gjerne</h2>
+        <p>Vi er glade i kunder og tar derfor vare på dem.</p>
+        <img src="../media/200w.gif" alt="Bilde en glad hund">
+        <p><b>Vi behandler våre kunder som hunder, dette har som formål å gi oss lojale <del>hunder</del> kunder.</b></p>
+        <h3>Her kan du høre fra en av våre fornøyde kunder</h3> <br>
+        <h4>Advarsel! Ikke ha på høyt volum når du hører på lydfilen.</h4>
+        <audio src="../media/fornoydkunde.mp3" controls="true"></audio>
+        <h4>Kontakt oss på:</h4>
+        <ul>
+            <li>E-post: info@vedfirma.no</li>
+            <li>Telefon: 555-1234</li>
+            <li>Adresse: 123 Hovedgate, Hovedbyen</li>
+            <li>Chat: kontakt oss gjerne gjennom chatten</li>
+        </ul>
+
+    </main>

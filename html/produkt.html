@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bildegalleri</title>
+  <style>
+    body {
+      background-image: url('../media/ved.PNG');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .image-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+    }
+    main {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            text-align: justify;
+        }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #ccc;
+      color: #333;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #bbb;
+    }
+    nav {
+      background-color: #ccc;
+      padding: 10px;
+      text-align: center;
+        }
+    nav ul {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+        }
+    nav li {
+      display: inline-block;
+      margin: 0 10px;
+        }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      padding: 5px;}
+  </style>
+</head>
+<body>
+  <header>
+      <h1>Vedfirma</h1>
+      <p>Din pålitelige kilde for kvalitetsved</p>
+  </header>
+  <nav>
+      <ul>
+        <li><a href="../index.html">Hjem</a></li>
+        <li><a href="omoss.html">Om oss</a></li>
+        <li><a href="produkt.html">Produkter</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="../svelte/vedkalkulator.svelte">Vedkalkulator</a></li>
+      </ul>
+  </nav>
+    <div class="image-container">
+    <h2>Her kan du se på produktene våre!</h2>
+    <img id="gallery-image" src="#" alt="">
+    <div>
+      <button id="prev-btn">Forrige</button>
+      <button id="next-btn">Neste</button>
+    </div>
+  </div>
+  <script>
+const images = [
+  '../media/download.jpg',
+  '../media/download1.jpg',
+  '../media/download2.jpg',
+];
+let currentIndex = 0;
+const galleryImage = document.getElementById('gallery-image');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+function updateImage() {
+  galleryImage.src = images[currentIndex];
+  galleryImage.alt = `Bilde ${currentIndex + 1}`;
+}
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+  }
+  updateImage();
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+  updateImage();
+});
+updateImage();
+  </script>
+</body>
+</html>
